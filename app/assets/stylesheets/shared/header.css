@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kablammo&family=ZCOOL+KuaiLe&display=swap');
+*{
+  box-sizing: border-box;
+}
+.top-page-header{
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: lightcyan;
+  align-items: center;
+  padding: 25px;
+}
+.search-bar-contents .logo{
+  text-decoration: none;
+  font-family: 'Kablammo', cursive;
+  font-family: 'ZCOOL KuaiLe', sans-serif;
+  font-size: 3rem;
+  color: #f67f2a;
+}
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.go-to{
+  margin-right: 100px;
+  text-decoration: none;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  font-family: 'Kablammo', cursive;
+  line-height: 30px;
+}
+.lists-right{
+  display: flex;
+  margin-right: 15px;
+}
+.lists-right li{
+  list-style: none;
+  margin-right: 20px;
+  font-size: 20px;
+}
+a{
+  text-decoration: none;
+}

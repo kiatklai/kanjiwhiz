@@ -1,0 +1,17 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to "KanjiWhiz 漢字達人", "/", class: "logo" %>
+  </div>
+  <div class='nav'>
+      <%= link_to 'go to test', "#", class: "go-to" %>
+    <ul class='lists-right'>
+      <%# <% if user_signed_in? %> 
+        <li><%= link_to "ooh", "#", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %></li>
+      <%# else %>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+      <%#end%>
+    </ul>
+  </div>
+</header>
