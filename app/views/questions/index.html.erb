@@ -1,0 +1,19 @@
+<%= render "shared/header"%>
+<div class="link">
+  <%=link_to "Add New Question", new_question_path,class: "add"%>
+</div>
+
+<div class="contents row">
+  <% @questions.each do |question| %>
+    <div class="content_post">
+      <h2><%=@question.question_text%></h2>
+      <ul class="more_list">
+        <% if @user.admin? %>
+          <li>
+            <%= link_to '削除', question_path(question.id), method: :delete %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

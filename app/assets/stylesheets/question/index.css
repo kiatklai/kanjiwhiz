@@ -1,0 +1,13 @@
+.link{
+  margin-top: 20px;
+  display: flex;
+  justify-content: right;
+}
+.link .add{
+  border: 1px solid #333;
+  font-size: 1.5rem;
+  font-family: 'Cherry Bomb One', cursive;
+  padding: 5px;
+  background-color: #fc9494;
+  border-radius: 15px;
+}
