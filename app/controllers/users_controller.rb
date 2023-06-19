@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
   def show
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    if current_user.update(user_params)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
   end
 
   # 管理者専用の登録アクション
@@ -9,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def create_admin
-    @user = User.new(user_params)
+    @user = User.new(admin_params)
     @user.admin = true
 
     if @user.save
@@ -23,7 +35,11 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
+  def admin_params
     params.require(:user).permit(:name, :password, :admin)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
 end
