@@ -3,4 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # 管理者かどうかの判定メソッド
+  def admin?
+    admin
+  end
+
+  validates :name, presence: true
+  validates :birthday, presence: true
 end
