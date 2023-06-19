@@ -2,8 +2,20 @@
 
 <div class="contents row">
   <div class="container">
-    <h2>編集</h2>
+    <h2>Edit</h2>
     <%= form_with model: @user, url:  user_path(current_user.id), id: 'new_user', class: 'new_user', local: true do |f| %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          Image
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :profile_picture, id:"item-image" %>
+        </div>
+      </div>
+      
       <div class="field">
         <%= f.label :name %><br />
         <%= f.text_field :name, autofocus: true %>

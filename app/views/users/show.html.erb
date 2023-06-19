@@ -4,8 +4,9 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "#{@user.name}さんの情報"%>
+        <%= "#{@user.name}さんのマイページ"%>
       </h2>
+      <%= image_tag @user.profile_picture.variant(resize: '200x200'), class: 'profile-picture' if @user.profile_picture.attached? %>
       <table class="table">
         <tbody>
           <tr>
