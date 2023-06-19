@@ -1,0 +1,66 @@
+.main{
+  width: 50vw;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.user__wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fbf8f8;
+  border-radius: 10px;
+  box-shadow: 2px 3px 0 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Cherry Bomb One', cursive;
+}
+.user__wrapper p{
+  margin-top: 30px;
+}
+.main h2{
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.table__col1, .table__col2{
+  font-size: 25px;
+  line-height: 50px;
+}
+.table{
+  width: 80%;
+}
+.table__col1{
+  text-align: left;
+  margin-right: 20px;
+}
+.edit p{
+  margin: 40px;
+}
+
+/* 編集ページ画面 */
+.img-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+.weight-bold-text{
+  font-size: 20px;
+}
+.click-upload>p {
+  margin-top: 15px;
+}
+.click-upload input{
+  font-size: 12px;
+  cursor: pointer;
+}
+.profile-picture{
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
