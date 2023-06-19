@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'users/new_admin', to: 'users#new_admin'
   post 'users/create_admin', to: 'users#create_admin'
   resources :users, only: [:show, :edit, :update]
+  # 問題の一覧表示
+  resources :questions, only: [:index, :new, :create, :destroy]
 end
