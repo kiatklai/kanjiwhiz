@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @users = User.find(params[:id])
+  end
+
   # 管理者専用の登録アクション
   def new_admin
     @user = User.new
