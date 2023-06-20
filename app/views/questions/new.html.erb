@@ -2,11 +2,11 @@
 
 <div class="contents row">
   <div class="container">
-    <h3>投稿する</h3>
+    <h2>作成する</h2>
     <%= form_with(model: @question, local: true) do |form| %>
       <%= form.text_field :question_text, placeholder: "漢字" %>
       <%= form.text_field :correct_answer, placeholder: "読み方(ひらがな)" %>
-      <%= form.submit "Add" %>
+      <%= form.submit "Add", class: "submit" %>
     <% end %>
   </div>
 </div>

@@ -1,19 +1,23 @@
 <%= render "shared/header"%>
 <div class="link">
-  <%=link_to "Add New Question", new_question_path,class: "add"%>
+  <% if user_signed_in? %>
+    <%if current_user == @user || current_user.admin?%>
+      <%=link_to "Add New Question", new_question_path,class: "add"%>
+    <%end%>
+  <% end %>
 </div>
 
 <div class="contents row">
   <% @questions.each do |question| %>
     <div class="content_post">
-      <h2><%=@question.question_text%></h2>
-      <ul class="more_list">
-        <% if @user.admin? %>
-          <li>
+      <h2><%=question.question_text%></h2>
+      <div class="more_list">
+        <% if user_signed_in? %>
+          <%if current_user == @user || current_user.admin?%>
             <%= link_to '削除', question_path(question.id), method: :delete %>
-          </li>
+          <%end%>
         <% end %>
-      </ul>
+      </div>
     </div>
   <% end %>
 </div>
