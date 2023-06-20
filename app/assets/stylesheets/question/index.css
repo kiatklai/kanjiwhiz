@@ -22,20 +22,31 @@
   width: 50vw;
 }
 .content_post{
-  width: 40%;
+  width: 50%;
   border: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  flex-wrap: wrap;
+  padding: 20px;
   border-radius: 10px;
   background-color: #f3eaea;
   margin-bottom: 15px;
+  position: relative;
 }
 .content_post h2{
   font-size: 2.2rem;
 }
+.date{
+  font-size: 0.3rem;
+}
+.date p{
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+}
 .more_list{
   opacity: 0;
+  margin-left: 20px;
 }
 .more_list:hover{
   opacity: 1;

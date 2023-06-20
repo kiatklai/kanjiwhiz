@@ -22,6 +22,9 @@
           <%end%>
         <% end %>
       </div>
+      <div class="date">
+        <p><%= question.created_at.strftime("%Y年%m月%d日")%></p>
+      </div>
     </div>
   <% end %>
 </div>
