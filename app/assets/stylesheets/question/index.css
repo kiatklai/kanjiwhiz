@@ -18,3 +18,32 @@
   cursor: pointer;
   background-color: #afebb3;
 }
+.contents{
+  width: 50vw;
+}
+.content_post{
+  width: 40%;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f3eaea;
+  margin-bottom: 15px;
+}
+.content_post h2{
+  font-size: 2.2rem;
+}
+.more_list{
+  opacity: 0;
+}
+.more_list:hover{
+  opacity: 1;
+}
+.title-text{
+  display: flex;
+  justify-content: center;
+}
+.title-text h1{
+  font-size: 2.7rem;
+}
