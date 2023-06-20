@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>テスト結果</h1>
+  <p>合計得点: <%= @total_score %></p>
+
+  <h2>正解の問題一覧</h2>
+  <ul>
+    <% @result[:correct_answers].each do |question| %>
+      <li><%= question.content %></li>
+    <% end %>
+  </ul>
+</div>

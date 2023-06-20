@@ -1,0 +1,14 @@
+<div class="contents">
+  <div class="container">
+    <%= form_for :user_answer, url: { action: :answer }, method: :post do |f| %>
+      <h3>Question <%= @question_number %>:</h3>
+      <p><%= @current_question.question_text %></p>
+
+      <div class="form-group">
+        <%= f.label :user_answer, "Your Answer" %>
+        <%= f.text_field :user_answer, class: "form-control" %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

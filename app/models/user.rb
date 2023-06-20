@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
 
   has_one_attached :profile_picture
+  has_many :test_results
 
   validates :name, presence: true
   validates :birthday, presence: true
