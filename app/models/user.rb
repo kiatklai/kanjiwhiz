@@ -4,10 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # 管理者かどうかの判定メソッド
-  def admin?
-    admin
-  end
 
   has_one_attached :profile_picture
 
