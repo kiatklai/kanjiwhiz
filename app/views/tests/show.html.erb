@@ -1,13 +1,15 @@
+<%= render "shared/header"%>
+
 <div class="contents">
   <div class="container">
     <%= form_for :user_answer, url: { action: :answer }, method: :post do |f| %>
-      <h3>Question <%= @question_number %>:</h3>
-      <p><%= @current_question.question_text %></p>
+      <p>Question <%= @question_number %>:</p>
+      <h1><%= @current_question.question_text %></h1>
 
       <div class="form-group">
         <%= f.label :user_answer, "Your Answer" %>
         <%= f.text_field :user_answer, class: "form-control" %>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
+        <%= f.submit "解答", class: "submit" %>
       </div>
     <% end %>
   </div>

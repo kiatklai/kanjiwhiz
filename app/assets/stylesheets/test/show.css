@@ -1,0 +1,8 @@
+.container h1{
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.form-control{
+  margin-top: 20px;
+}
