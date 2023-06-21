@@ -1,4 +1,6 @@
 class TestsController < ApplicationController
+  before_action :authenticate_user!, only: [:answer, :show]
+
   def show
     # テストの問題をランダムに5問取得する（questionsテーブルからの取得方法は略）
     @questions = Question.order('RAND()').limit(5)
