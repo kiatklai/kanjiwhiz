@@ -1,0 +1,32 @@
+.container-answer{
+  width: 500px;
+  margin: 0 auto;
+  background-color: aliceblue;
+}
+.answer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.answer h2{
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.answer p{
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+}
+ul li{
+  list-style: none;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 20px;
+  line-height: 35px;
+}

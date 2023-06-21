@@ -1,11 +1,19 @@
-<div class="container">
-  <h1>テスト結果</h1>
-  <p>合計得点: <%= @total_score %></p>
+<%= render "shared/header"%>
 
-  <h2>正解の問題一覧</h2>
-  <ul>
-    <% @result[:correct_answers].each do |question| %>
-      <li><%= question.content %></li>
-    <% end %>
-  </ul>
+<div class="container-answer">
+  <div class="answer">
+    <h2>テスト結果</h2>
+    <p>合計得点: <%= @total_score %></p>
+
+    <h2>正解の問題一覧</h2>
+    <ul>
+      <% @test_results.each do |result| %>
+      <li>
+        漢字：<%= result.question.question_text %><br>
+        解答(読み方)：<%= result.question.correct_answer %><br>
+        ユーザーの回答：<%= result.user_answer %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
