@@ -20,8 +20,22 @@ class TestResultsController < ApplicationController
 
     # 合計得点をscoreカラムに保存
     test_results.first.update(score: total_score)
-    
-    @total_score = total_score
-    end
 
+    @total_score = total_score
+
+    average_score = calculate_and_save_average_score(current_user)
+  end
+
+  private
+  def calculate_and_save_average_score(user)
+    test_attempts = user.test_attempts
+    total_score = user.test_results.where(is_correct: true).count
+  
+    average_score = (test_attempts > 0) ? (total_score.to_f / test_attempts) : 0
+  
+    user.update(average_score: average_score) # average_scoreをuserテーブルのカラムに保存する
+  
+    return average_score
+  end
+    
 end

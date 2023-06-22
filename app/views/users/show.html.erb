@@ -25,6 +25,10 @@
             <th class="table__col1">テストを受けた回数</th>
             <td class="table__col2"><%= @user.test_attempts %></td>
           </tr>
+          <tr>
+            <th class="table__col1">平均点数</th>
+            <td class="table__col2"><%= @user.average_score %></td>
+          </tr>
         </tbody>
       </table>
       <p><%= link_to "編集/プロフィール写真追加", edit_user_path(@user.id) %></p>

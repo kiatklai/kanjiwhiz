@@ -40,6 +40,7 @@ class TestsController < ApplicationController
       total_score = TestResult.where(user: current_user, is_correct: true).count
 
       @result = { total_score: total_score, correct_answers: correct_answers }
+      current_user.increment!(:test_attempts)
       @question_number = nil
       session[:question_number] = nil # セッションの問題番号をクリア
       # session[:current_question] = @current_question.id
