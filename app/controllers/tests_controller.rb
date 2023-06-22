@@ -3,8 +3,8 @@ class TestsController < ApplicationController
 
   def show
     # テストの問題をランダムに5問取得する（questionsテーブルからの取得方法は略）
-    @questions = Question.order('RAND()').limit(5)
-    @question_number = 0
+    @questions = Question.order('RAND()').limit(6)
+    @question_number = 1
   # 最初の問題を表示
     @current_question = @questions.first
     session[:questions] = @questions # セッションに問題を保存
@@ -19,7 +19,7 @@ class TestsController < ApplicationController
     @questions = session[:questions].map { |question| Question.find(question["id"]) }
     @question_number = session[:question_number]
     @current_question = @questions[@question_number]
-    correct_answer = @current_question[:correct_answer]
+    correct_answer = @current_question.correct_answer
   
     # 回答の正誤を判定して結果を保存
     is_correct = (user_answer == correct_answer)
@@ -42,7 +42,8 @@ class TestsController < ApplicationController
       @result = { total_score: total_score, correct_answers: correct_answers }
       @question_number = nil
       session[:question_number] = nil # セッションの問題番号をクリア
-      redirect_to test_results_result_path # テスト結果画面にリダイレクト
+      # session[:current_question] = @current_question.id
+      redirect_to  test_results_result_path
     end
   end
 end

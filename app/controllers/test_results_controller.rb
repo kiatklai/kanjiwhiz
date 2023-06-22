@@ -1,27 +1,27 @@
 class TestResultsController < ApplicationController
-  def score
-    # is_correctがtrueの回答の数を数えてスコアとする例
-    correct_count = TestResult.where(user: self.user, is_correct: true).count
-    score = correct_count * 10
-
-    # スコアを返します
-    score
-  end
-  
   def result
-    @test_results = current_user.test_results.order(created_at: :desc).limit(5)
-
+    @test_results = current_user.test_results.includes(:question).order(created_at: :desc).limit(5)
+    
     # 合計点数の計算
-    total_score = @test_results.sum { |result| result.score.to_i }
+    # @total_score = @test_results.sum { |result| result.score.to_i }
 
-    # 各問題の正解とユーザーの回答を紐付けるために関連データをロードする
-    @test_results.includes(:question)
+    test_results = current_user.test_results.order(created_at: :desc).limit(5)
 
-    correct_question_ids = @test_results.where(is_correct: true).pluck(:question_id)
-    correct_answers = Question.where(id: correct_question_ids)
+    # 合計点数の初期化
+    total_score = 0
 
-    # 合計点数や正解の表示など、ビューに必要な情報を設定する
+    # テスト結果の処理
+    test_results.each do |result|
+      # 正解の比較と点数の加算
+      if result.is_correct
+        total_score += 1
+      end
+    end
+
+    # 合計得点をscoreカラムに保存
+    test_results.first.update(score: total_score)
+    
     @total_score = total_score
-    @result = { total_score: total_score, correct_answers: correct_answers }
-  end
+    end
+
 end
