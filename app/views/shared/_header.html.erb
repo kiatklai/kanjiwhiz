@@ -3,7 +3,7 @@
     <%= link_to "KanjiWhiz 漢字達人", "/", class: "logo" %>
   </div>
   <div class='nav'>
-      <%= link_to 'go to test', "#", class: "go-to" %>
+      <%= link_to 'go to test', tests_show_path, class: "go-to" %>
     <ul class='lists-right'>
       <% if user_signed_in? %> 
         <li><%= link_to "Hi, #{current_user.name}", user_path(current_user.id), class: "user-nickname" %></li>

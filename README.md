@@ -36,6 +36,7 @@
 | is_correct      | boolean    |                                |
 | user            | references | null: false, foreign_key: true |
 | question        | references | null: false, foreign_key: true |
+| score           | integer    |                                |
 
 ### Association
 
