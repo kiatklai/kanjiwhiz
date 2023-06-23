@@ -4,6 +4,8 @@
   <div class="container">
     <h2>Edit</h2>
     <%= form_with model: @user, url:  user_path(@user.id), id: 'new_user', class: 'new_user', local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      
       <div class="img-upload">
         <div class="weight-bold-text">
           Image

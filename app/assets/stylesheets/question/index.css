@@ -3,6 +3,9 @@
   display: flex;
   justify-content: right;
 }
+.link a{
+  text-decoration: none;
+}
 .link .add{
   border: 1px solid #333;
   font-size: 1.5rem;
@@ -11,6 +14,15 @@
   background-color: #fc9494;
   border-radius: 15px;
 }
+.contents-row{
+  margin: 20px;
+  height: 500px;
+}
+.content-list{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .container .submit{
   font-size: 1.8rem;
   height: 40px;
@@ -18,24 +30,21 @@
   cursor: pointer;
   background-color: #afebb3;
 }
-.contents{
-  width: 100vw;
-  
-}
 .content_post{
-  width: 50%;
+  flex:1;
   border: 1px solid #ccc;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
-  background-color: #f3eaea;
-  margin-bottom: 15px;
+  background-color: #b0e0ed;
+  margin: 15px;
   position: relative;
+  overflow-x: hidden;
 }
 .content_post h2{
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 .date{
   font-size: 0.3rem;
@@ -43,11 +52,16 @@
 .date p{
   position: absolute;
   right: 5px;
-  bottom: 2px;
+  bottom: 0;
 }
 .more_list{
   opacity: 0;
-  margin-left: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.more_list a{
+  text-decoration: none;
 }
 .more_list:hover{
   opacity: 1;

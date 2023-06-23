@@ -11,10 +11,14 @@
   <h1>漢字の問題一覧</h1>
 </div>
 
-<div class="contents row">
-  <% @questions.each do |question| %>
+<div class="contents-row">
+  <div class="content-list">
+    <% @questions.each do |question| %>
     <div class="content_post">
       <h2><%=question.question_text%></h2>
+      <div class="date">
+        <p><%= question.created_at.strftime("%Y年%m月%d日")%></p>
+      </div>
       <div class="more_list">
         <% if user_signed_in? %>
           <%if current_user == @user || current_user.admin?%>
@@ -22,11 +26,9 @@
           <%end%>
         <% end %>
       </div>
-      <div class="date">
-        <p><%= question.created_at.strftime("%Y年%m月%d日")%></p>
-      </div>
     </div>
   <% end %>
+  </div>
 </div>
 
 <%= render "shared/footer"%>
