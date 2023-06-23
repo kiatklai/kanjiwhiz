@@ -2,6 +2,9 @@
 
 <div class="contents">
   <div class="container">
+    <div class="error-alert">
+      <p class='error-message'><%=@error_message%></p>
+    </div>
     <%= form_for :user_answer, url: { action: :answer }, method: :post do |f| %>
       <p>Question <%= @question_number %>:</p>
       <h1><%= @current_question.question_text %></h1>

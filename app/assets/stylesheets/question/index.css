@@ -16,6 +16,7 @@
 }
 .contents-row{
   margin: 20px;
+  height: 500px;
 }
 .content-list{
   display: grid;
@@ -30,7 +31,6 @@
   background-color: #afebb3;
 }
 .content_post{
-  /* width: 50%; */
   flex:1;
   border: 1px solid #ccc;
   display: flex;

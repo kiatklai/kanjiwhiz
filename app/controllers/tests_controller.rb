@@ -22,8 +22,19 @@ class TestsController < ApplicationController
     correct_answer = @current_question.correct_answer
   
     # 回答の正誤を判定して結果を保存
-    is_correct = (user_answer == correct_answer)
-    TestResult.create(user_id: current_user.id, question_id: @current_question.id, user_answer: user_answer, is_correct: is_correct)
+    test_result = TestResult.new(user_id: current_user.id, question_id: @current_question.id, user_answer: user_answer, is_correct: (user_answer == correct_answer))
+
+    if test_result.valid?
+      test_result.save
+    else
+    # バリデーションエラーがある場合はエラーメッセージを取得し、適切な処理を行う
+      @error_message = test_result.errors.full_messages.first
+    # エラーメッセージを適切な場所に表示するなどの処理を行う
+
+    # renderなどを用いて回答画面を再表示する場合
+    render 'show'
+    return
+  end
   
     # 次の問題に遷移
     next_question_index = @question_number + 1
@@ -43,7 +54,6 @@ class TestsController < ApplicationController
       current_user.increment!(:test_attempts)
       @question_number = nil
       session[:question_number] = nil # セッションの問題番号をクリア
-      # session[:current_question] = @current_question.id
       redirect_to  test_results_result_path
     end
   end
