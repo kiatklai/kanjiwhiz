@@ -1,6 +1,5 @@
 .main{
   width: 50vw;
-  height: 600px;
   margin: 0 auto;
   padding-top: 50px;
 }
@@ -11,13 +10,16 @@
   align-items: center;
   padding: 10px;
   border: 1px solid #ccc;
-  background-color: #fbf8f8;
+  background-color: #fffffff5;
   border-radius: 10px;
   box-shadow: 2px 3px 0 5px rgba(0, 0, 0, 0.2);
   font-family: 'Cherry Bomb One', cursive;
 }
 .user__wrapper p{
   margin-top: 30px;
+}
+.user__wrapper a{
+  text-decoration: none;
 }
 .main h2{
   font-size: 2.5rem;

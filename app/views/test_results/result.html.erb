@@ -6,7 +6,8 @@
     <p>合計得点: <%= @total_score %></p>
 
     <h2>正解の問題一覧</h2>
-    <ul>
+    <div class="results">
+      <ul>
       <% @test_results.each do |result| %>
       <li>
         漢字：<%= result.question.question_text %><br>
@@ -15,6 +16,7 @@
       </li>
       <% end %>
     </ul>
+    </div>
   </div>
 </div>
 
