@@ -31,3 +31,14 @@
   line-height: 35px;
   font-size: 25px;
 }
+.bottom-link{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.bottom-link a{
+  text-decoration: none;
+  font-family: 'Cherry Bomb One', cursive;
+  color: #d529d2;
+  font-size: 1.4rem;
+}

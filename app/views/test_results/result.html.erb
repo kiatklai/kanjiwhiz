@@ -18,6 +18,11 @@
     </ul>
     </div>
   </div>
+  <div class="bottom-link">
+    <%= link_to 'トップページ',"/" %>
+    <%= link_to '問題一覧', questions_path%>
+    <%= link_to 'マイページ', user_path(current_user.id)%>
+  </div>
 </div>
 
 <%= render "shared/footer"%>
