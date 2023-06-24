@@ -1,4 +1,6 @@
 class TestResultsController < ApplicationController
+  before_action :authenticate_user!, only: :result
+  before_action :check_test_completed, only: :result
   def result
     @test_results = current_user.test_results.includes(:question).order(created_at: :desc).limit(5)
     
@@ -36,6 +38,15 @@ class TestResultsController < ApplicationController
     user.update(average_score: average_score) # average_scoreをuserテーブルのカラムに保存する
   
     return average_score
+  end
+
+  def check_test_completed
+    redirect_to root_path unless test_completed?
+  end
+
+  def test_completed?
+    # テストの回答結果が存在するかどうかで判定できます
+    TestResult.exists?(user_id: current_user.id)
   end
     
 end

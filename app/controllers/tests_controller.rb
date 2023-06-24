@@ -2,6 +2,7 @@ class TestsController < ApplicationController
   before_action :authenticate_user!, only: [:answer, :show]
 
   def show
+    if Question.exists?
     # テストの問題をランダムに5問取得する（questionsテーブルからの取得方法は略）
     @questions = Question.order('RAND()').limit(6)
     @question_number = 1
@@ -9,6 +10,9 @@ class TestsController < ApplicationController
     @current_question = @questions.first
     session[:questions] = @questions # セッションに問題を保存
     session[:question_number] = @question_number # セッションに問題番号を保存
+    else
+      redirect_to root_path, alert: "問題が設定されていません"  # 問題が設定されていない場合はトップページにリダイレクトし、アラートメッセージを表示する
+    end
   end
 
   def answer
