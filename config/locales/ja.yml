@@ -4,3 +4,9 @@ ja:
       user:
         name: 名前
         birthday: 生年月日
+      question:
+        question_text: 問題
+        correct_answer: 解答
+      test_result:
+        user_answer: 解答
+      
