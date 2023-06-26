@@ -3,15 +3,20 @@ class TestsController < ApplicationController
 
   def show
     if Question.exists?
-    # テストの問題をランダムに5問取得する（questionsテーブルからの取得方法は略）
-    @questions = Question.order('RANDOM()').limit(6)
-    @question_number = 1
-  # 最初の問題を表示
-    @current_question = @questions.first
-    session[:questions] = @questions # セッションに問題を保存
-    session[:question_number] = @question_number # セッションに問題番号を保存
+      # 問題を取得し、ランダムにシャッフルする
+      all_questions = Question.all
+      shuffled_questions = all_questions.shuffle
+  
+      # 最初の5つの問題を選択する
+      @questions = shuffled_questions.take(6)
+      @question_number = 1
+  
+      # 最初の問題を表示
+      @current_question = @questions.first
+      session[:questions] = @questions # セッションに問題を保存
+      session[:question_number] = @question_number # セッションに問題番号を保存
     else
-      redirect_to root_path, alert: "問題が設定されていません"  # 問題が設定されていない場合はトップページにリダイレクトし、アラートメッセージを表示する
+      redirect_to root_path, alert: "問題が設定されていません"
     end
   end
 

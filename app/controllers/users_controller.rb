@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :show]
+  before_action :authenticate_user!
   def show
     @user = User.find(params[:id])
   end
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     if user.update(user_params)
       redirect_to user_path(user.id)
+      bypass_sign_in(user)
     else
       render :edit
     end
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:email,:profile_picture, :birthday, :password)
+    params.require(:user).permit(:name,:email,:profile_picture, :birthday, :password, :password_confirmation)
   end
 
 end
