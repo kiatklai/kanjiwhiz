@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   def show
     if Question.exists?
       # テストの問題をランダムに5問取得する（questionsテーブルからの取得方法は略）
-      @questions = Question.order('RAND()').limit(6)
+      @questions = Question.order('RANDOM()').limit(5+1)
       @question_number = 1
     # 最初の問題を表示
       @current_question = @questions.first
