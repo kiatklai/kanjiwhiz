@@ -10,9 +10,8 @@ class TestsController < ApplicationController
       @current_question = @questions.first
       session[:questions] = @questions # セッションに問題を保存
       session[:question_number] = @question_number # セッションに問題番号を保存
-      else
-        redirect_to root_path, alert: "問題が設定されていません"  # 問題が設定されていない場合はトップページにリダイレクトし、アラートメッセージを表示する
-      end
+    else
+      redirect_to root_path, alert: "問題が設定されていません"  # 問題が設定されていない場合はトップページにリダイレクトし、アラートメッセージを表示する
     end
   end
 
@@ -37,9 +36,9 @@ class TestsController < ApplicationController
     # エラーメッセージを適切な場所に表示するなどの処理を行う
 
     # renderなどを用いて回答画面を再表示する場合
-    render 'show'
-    return
-  end
+      render 'show'
+      return
+    end
   
     # 次の問題に遷移
     next_question_index = @question_number + 1
