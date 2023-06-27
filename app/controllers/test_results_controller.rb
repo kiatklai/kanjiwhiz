@@ -14,10 +14,8 @@ class TestResultsController < ApplicationController
         total_score += 1
       end
     end
-
     # 合計得点をscoreカラムに保存
     @test_results.first.update(score: total_score)
-
     @total_score = total_score
 
     average_score = calculate_and_save_average_score(current_user)
