@@ -1,44 +1,94 @@
-## テーブル設計
+# アプリケーション名
+KanjiWhiz 漢字達人
 
-## users テーブル
+# アプリケーション概要
+漢字のテストのアプリケーションを作成しました。ユーザーを登録するとテストを受けられるようになります。一方でadmin権限者のみ新規の問題作成と削除をすることができます。
 
-| Column             | Type   | Options                  |
-| ------------------ | ------ | ------------------------ |
-| name               | string | null: false              |
-| email              | string | null: false,unique: true |
-| encrypted_password | string | null: false              |
-| profile_picture    | string |                          |
-| test_attempts      | integer|                          |
-| average_score      | integer|                          |
-| birthday           | date   | null: false              |
-| admin              | boolean| default: false           |
+# URL
+https://kanjiwhiz.onrender.com/
 
-### Association
+# テスト用アカウント
+- Basic認証パスワード：2345
+- Basic認証ID：admin
+- メールアドレス(一版のユーザー)：ooh@test.com
+- パスワード：t456789
 
-- has_many :test_results
+# 利用方法
 
-## questions テーブル
+## テストを受ける
+1. トップページのヘッダーからユーザー新規登録を行う
+1. トップページから**Go To Test**ボタンを押下
+1. テスト開始、1回のテストは5問
+1. 1問ごとにひらがなの読み方を記入し解答ボタンを押下
+1. 終了後、テスト結果画面へ変わる
 
-| Column         | Type      | Options     |
-| -------------- | --------- | ----------- |
-| question_text  | string    | null: false |
-| correct_answer | string    | null: false |
+## admin権限者しか問題作成及び、削除できない
+1. トップページのヘッダーから問題一覧へ遷移する
+1. **Add New Question**ボタンを押下、新規問題作成
+1. 削除の場合、各問題の右端に**削除**ボタンを押すと問題削除される
 
-### Association
+# アプリケーションを作成した背景
+家内にヒアリングし、「小学生の息子に楽しく漢字を勉強してもらいたい」という課題を抱えていることが判明した。課題を分析した結果、「漢字を見てどのような読み方を解答欄に記入し、途中で集中力がないように1回のテストは5門で最後に結果画面に正解と合計得点が表示される。問題(漢字)は親が管理者としてどの漢字を勉強してもらいたいか作成と削除できる」というイメージを立て、漢字テストのアプリケーションを開発することにした。
 
-- has_many :test_results
+# 洗い出した要件
+<a href="https://docs.google.com/spreadsheets/d/1rVFlX5vK7eNISwYPKhiTwC-8oJNxO38ajY0pxE4AhU4/edit#gid=982722306">要件を定義したシート</a>
 
-## test_results テーブル
+# 実装した機能についての画面やGIF及び、その説明
+[![Image from Gyazo](https://i.gyazo.com/1a3dadbba9f9083ba0304f871608dff9.gif)](https://gyazo.com/1a3dadbba9f9083ba0304f871608dff9)
+画面をスクロールダウンすると、ヘッダーの下位のバーが固定され、同時に**問題一覧**が表示される
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | -----------------------------  |
-| user_answer     | string     | null: false                    |
-| is_correct      | boolean    |                                |
-| user            | references | null: false, foreign_key: true |
-| question        | references | null: false, foreign_key: true |
-| score           | integer    |                                |
+[![Image from Gyazo](https://i.gyazo.com/c4527d64fd9e20e1056433852e658507.gif)](https://gyazo.com/c4527d64fd9e20e1056433852e658507)
+トップページの真ん中に枠の端をクリックすると、左右にスライドして次々に
+入れ替えていくことができる。
 
-### Association
+[![Image from Gyazo](https://i.gyazo.com/74e3764323a1c22e531056794a14caa5.gif)](https://gyazo.com/74e3764323a1c22e531056794a14caa5)
+**Go To Test** を押すと、テスト開始、ひらがなの読み方を記入
 
-- belongs_to :user
-- belongs_to :question
+[![Image from Gyazo](https://i.gyazo.com/0c335a65757b904f743ac4cbf8552790.gif)](https://gyazo.com/0c335a65757b904f743ac4cbf8552790)
+カタカナ、またはローマ字を記入し、「解答」を押しても、送信できない。日本語のエラーメッセージがアラートする
+
+[![Image from Gyazo](https://i.gyazo.com/d2a3761548f918dc09487e44e3fc10cb.gif)](https://gyazo.com/d2a3761548f918dc09487e44e3fc10cb)
+5問が終了後、合計得点と正解の結果画面へ遷移させる
+
+[![Image from Gyazo](https://i.gyazo.com/23fe08486619a3179f0012565e92feaf.gif)](https://gyazo.com/23fe08486619a3179f0012565e92feaf)
+マイページから、ユーザーの情報編集可能
+
+[![Image from Gyazo](https://i.gyazo.com/c3db39628702bfcde95019030665de9a.gif)](https://gyazo.com/c3db39628702bfcde95019030665de9a)
+管理者のみ**各問題の右上**にカーソルに触れている各問題の右上側に、問題を削除できる「削除」が表示され、クリックすると、該当問題が消える。
+
+# 実装予定の機能
+今後はSNSアカウントで認証しログイン機能及び、結果画面にもし満点取得すれば、JavaScriptで何か表示される機能を実装する予定。
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/ce3f2d5c89f22785ca14c8df4355063d.png)](https://gyazo.com/ce3f2d5c89f22785ca14c8df4355063d)
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/4706af491b5c78d4f8f6abf40dc85c93.png)](https://gyazo.com/4706af491b5c78d4f8f6abf40dc85c93)
+
+# 開発環境
+- フロントエンド
+- バックエンド
+- インフラ
+- テスト
+- テキストエディタ
+- Ruby
+- Ruby on Rails
+- HTML / CSS / JavaScript / Boostrap
+- Page Design：Google Font / FontAwesome / Hero Pattern
+
+# ローカルでの動作方法
+以下のコマンドを順に実行<br>
+% git clone <a href="https://github.com/kiatklai/kanjiwhiz">https://github.com/kiatklai/kanjiwhiz</a><br>
+% cd kanjiwhiz<br>
+% bundle install<br>
+% yarn install<br>
+
+# 工夫したポイント
+　ユ－ザ－にとって使いやすく楽しいアプリにすることが重要だと思い、画面をスクロールダウンすると、ヘッダーの下位のバーが固定され、同時に問題一覧が表示される及び、トップページの真ん中に枠の端をクリックすると、左右にスライドして次々に入れ替えていくことができるの課題を考え、リリースすることにした。
+　解答の記入機能はコメントの投稿機能のように実装したが、今まで学んでいたカリキュラムの内容を活用していたが、いくら投稿しても、同じタイトルで、1回のテストは5問のため、うまく動かなかった。
+そのため、コントローラーのアクション内に問題を5問出力し、ユーザーの5回の解答を配列に保存し、更にロジックifを利用して5問が全て出たら、結果画面に遷移されるという流れを実行することできた。
+その結果、ユ－ザ－がスムーズに1回のテストで5問まで解答を記入することができた。1回5問は途中で集中力なく、楽しく利用してもらうと考えました。
+　また、エラ－メッセ－ジを英語から日本語表記にすることにより、ユ－ザ－に明確に問題点を表示することができるようになりました。
+その結果、英語表記に懸念のあるユ－ザ－が離れてしまうことを防ぐことができ、また、ユ－ザ－にとって何がエラ－なのかを明確にすることにより、次のステップに進むため、素早く対応することができるようになったと考えられます。
+
+上記の工夫をすることにより、ユ－ザ－にとって、さらに使いやすく楽しいアプリになったと考えました。

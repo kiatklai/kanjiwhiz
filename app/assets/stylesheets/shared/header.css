@@ -53,10 +53,11 @@ nav ul li a{
   text-decoration: none;
   border: 1px solid #333;
   padding: 5px 10px;
-  font-family: 'Kablammo', cursive;
+  font-family: 'Cherry Bomb One', cursive;
   font-size: 18px;
   line-height: 40px;
   border-radius: 8px;
+  background-color: #e5ed0d;
 }
 .lists-right{
   display: flex;
@@ -72,7 +73,8 @@ a{
 }
 .lists-right a{
   text-decoration: none;
-  font-size: 25px;
+  font-size: 2rem;
+  font-family: 'Cherry Bomb One', cursive;
 }
 nav{
   width: 100%;

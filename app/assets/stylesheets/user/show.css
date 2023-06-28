@@ -17,9 +17,11 @@
 }
 .user__wrapper p{
   margin-top: 30px;
+  font-size: 1.2rem;
 }
 .user__wrapper a{
   text-decoration: none;
+  color: plum;
 }
 .main h2{
   font-size: 2.5rem;

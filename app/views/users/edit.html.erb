@@ -2,7 +2,7 @@
 
 <div class="contents row">
   <div class="container">
-    <h2>編集</h2>
+    <h2><%="#{@user.name}さん"%>の情報編集</h2>
     <%= form_with model: @user, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
       
