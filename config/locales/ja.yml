@@ -2,11 +2,11 @@ ja:
   activerecord:
     attributes:
       user:
-        name: 名前
-        birthday: 生年月日
+        name: なまえ
+        birthday: せいねんがっぴ
       question:
-        question_text: 問題
-        correct_answer: 解答
+        question_text: もんだい
+        correct_answer: かいとう
       test_result:
-        user_answer: 解答
+        user_answer: かいとう
       

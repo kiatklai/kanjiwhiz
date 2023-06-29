@@ -10,9 +10,9 @@
       <h1><%= @current_question.question_text %></h1>
 
       <div class="form-group">
-        <%= f.label :user_answer, "Your Answer" %>
+        <%= f.label :user_answer, "こたえ" %>
         <%= f.text_field :user_answer, class: "form-control" %>
-        <%= f.submit "解答", class: "submit" %>
+        <%= f.submit "つぎへ", class: "submit" %>
       </div>
     <% end %>
   </div>

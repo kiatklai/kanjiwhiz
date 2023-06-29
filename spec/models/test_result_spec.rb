@@ -32,31 +32,31 @@ RSpec.describe TestResult, type: :model do
       it 'user_answerが空だと作成できない' do
         @test_result.user_answer = ''
         @test_result.valid?
-        expect(@test_result.errors.full_messages).to include("解答を入力してください")
+        expect(@test_result.errors.full_messages).to include("かいとうを入力してください")
       end
 
       it 'user_answerが半角数字のみのときに登録できないこと' do
         @test_result.user_answer = '123456'
         @test_result.valid?
-        expect(@test_result.errors.full_messages).to include("解答は全角ひらがなを使用してください")
+        expect(@test_result.errors.full_messages).to include("かいとうは全角ひらがなを使用してください")
       end
 
       it 'user_answerが半角英語のみのときに登録できないこと' do
         @test_result.user_answer = 'abcdef'
         @test_result.valid?
-        expect(@test_result.errors.full_messages).to include("解答は全角ひらがなを使用してください")
+        expect(@test_result.errors.full_messages).to include("かいとうは全角ひらがなを使用してください")
       end
 
       it 'user_answerが半角カタカナのみのときに登録できないこと' do
         @test_result.user_answer = 'カンジ'
         @test_result.valid?
-        expect(@test_result.errors.full_messages).to include("解答は全角ひらがなを使用してください")
+        expect(@test_result.errors.full_messages).to include("かいとうは全角ひらがなを使用してください")
       end
 
       it 'user_answerが漢字のみのときに登録できないこと' do
         @test_result.user_answer = '日本'
         @test_result.valid?
-        expect(@test_result.errors.full_messages).to include("解答は全角ひらがなを使用してください")
+        expect(@test_result.errors.full_messages).to include("かいとうは全角ひらがなを使用してください")
       end
     end
   end

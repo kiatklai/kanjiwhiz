@@ -11,8 +11,8 @@
       <% @test_results.each do |result| %>
       <li>
         漢字：<%= result.question.question_text %><br>
-        解答(読み方)：<%= result.question.correct_answer %><br>
-        ユーザーの回答：<%= result.user_answer %>
+        せいかい：<%= result.question.correct_answer %><br>
+        ユーザーのこたえ：<%= result.user_answer %>
       </li>
       <% end %>
     </ul>

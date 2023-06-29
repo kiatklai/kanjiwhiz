@@ -16,37 +16,37 @@ RSpec.describe Question, type: :model do
       it 'question_textが空だと作成できない' do
         @question.question_text = ''
         @question.valid?
-        expect(@question.errors.full_messages).to include("問題を入力してください")
+        expect(@question.errors.full_messages).to include("もんだいを入力してください")
       end
 
       it 'question_textが半角数字のみのときに登録できないこと' do
         @question.question_text = '123456'
         @question.valid?
-        expect(@question.errors.full_messages).to include("問題は全角ひらがな・カタカナ・漢字を使用してください")
+        expect(@question.errors.full_messages).to include("もんだいは全角ひらがな・カタカナ・漢字を使用してください")
       end
 
       it 'question_textが半角英語のみのときに登録できないこと' do
         @question.question_text = 'abcdef'
         @question.valid?
-        expect(@question.errors.full_messages).to include("問題は全角ひらがな・カタカナ・漢字を使用してください")
+        expect(@question.errors.full_messages).to include("もんだいは全角ひらがな・カタカナ・漢字を使用してください")
       end
 
       it 'correct_answerが空だと作成できない' do
         @question.correct_answer = ''
         @question.valid?
-        expect(@question.errors.full_messages).to include("解答を入力してください")
+        expect(@question.errors.full_messages).to include("かいとうを入力してください")
       end
 
       it 'correct_answerが半角数字のみのときに登録できないこと' do
         @question.correct_answer = '123456'
         @question.valid?
-        expect(@question.errors.full_messages).to include("解答は全角ひらがなを使用してください")
+        expect(@question.errors.full_messages).to include("かいとうは全角ひらがなを使用してください")
       end
 
       it 'correct_answerが半角英語のみのときに登録できないこと' do
         @question.correct_answer = 'abcdef'
         @question.valid?
-        expect(@question.errors.full_messages).to include("解答は全角ひらがなを使用してください")
+        expect(@question.errors.full_messages).to include("かいとうは全角ひらがなを使用してください")
       end
 
     end
