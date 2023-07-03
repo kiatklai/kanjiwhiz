@@ -67,7 +67,7 @@
   font-size: 2.8rem;
   color: #2314f0;
   text-shadow: 2px 4px rgba(242, 250, 18, 0.5);
-  animation: result2 1.2s infinite alternate;
+  animation: result2 2.5s infinite alternate;
 }
 
 @keyframes result1{
@@ -82,7 +82,7 @@
 @keyframes result2{
   from {
     font-size: 2rem;
-    width: 30%;
+    width: 50%;
   }
   to {
     font-size: 3rem;
