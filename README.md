@@ -51,6 +51,12 @@ https://kanjiwhiz.onrender.com/
 [![Image from Gyazo](https://i.gyazo.com/e1067f15abe7c8062569ed38ea074ee2.gif)](https://gyazo.com/e1067f15abe7c8062569ed38ea074ee2)
 5問すべて終了した後、合計得点と結果が画面に表示される。
 
+[![Image from Gyazo](https://i.gyazo.com/cc86b4615a82b94f15fd09913ad98dae.gif)](https://gyazo.com/cc86b4615a82b94f15fd09913ad98dae)
+合計得点が5になった場合、「おめでとう」の表示がされる。
+
+[![Image from Gyazo](https://i.gyazo.com/460e80f308792fc38b92f4c62bef2b4d.gif)](https://gyazo.com/460e80f308792fc38b92f4c62bef2b4d)
+合計得点が5以外の場合、「おしかった、もっとがんばってね」の表示がされる。
+
 [![Image from Gyazo](https://i.gyazo.com/d7e0a87889f83aef4dd2ad5fbb6c2d11.gif)](https://gyazo.com/d7e0a87889f83aef4dd2ad5fbb6c2d11)
 マイページから、ユーザーの情報編集が可能
 
@@ -58,7 +64,6 @@ https://kanjiwhiz.onrender.com/
 「漢字の問題一覧」ペ－ジで、問題の削除ができる。この権限は、管理者のみで、削除したい漢字の右上にカーソルを合わせると、「削除」が表示される。それをクリックすると、該当問題が削除される。
 
 # 実装予定の機能
-現在、結果画面で、満点取得した場合に、JavaScriptを使用して、「おめでとう」などの表示がされる機能を実装中。<br>
 今後は、SNSアカウントを使用してログインできる機能を追加する予定。
 
 # データベース設計
@@ -97,7 +102,7 @@ https://kanjiwhiz.onrender.com/
 
 
 テスト終了時に、結果と点数を出すことにより、ユ－ザ－に達成感を味わってもらえるようにした。
-また、今後は、満点を取った時に「おめでとう」などの表示ができるよう機能を追加実装する予定である。
+そのため、満点を取った時に「おめでとう」の表示ができるよう機能を追加実装することにした。
 
 管理者登録をすることにより、漢字の種類やレベルの調整ができ、また、漢字の削除機能を追加したことにより、誤入力した場合、いらない漢字を整理したい場合などに役に立てるようにした。
 

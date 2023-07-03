@@ -42,36 +42,44 @@
   color: #d529d2;
   font-size: 1.4rem;
 }
-#ome{
+.ome{
   border-bottom: 1px solid #ddd;
 }
-h2 .fa-regular{
+/* h2 .fa-regular{
   display: none;
-}
-#zannen{
+} */
+.zannen{
   border-bottom: 1px solid #ddd;
   text-align: center;
 }
-#zannen h3 {
+/* #zannen h3 {
   display: none;
-}
-.congrat{
+} */
+.congrats{
   font-family: 'Cherry Bomb One', cursive;
   font-size: 3.4rem;
   color: #f00f0f;
   text-shadow: 2px 5px rgba(13, 250, 25, 0.5);
-  display: contents;
+  animation: result1 1s infinite alternate-reverse;
 }
 .sad{
   font-family: 'Cherry Bomb One', cursive;
   font-size: 2.8rem;
   color: #2314f0;
   text-shadow: 2px 4px rgba(242, 250, 18, 0.5);
-  display: contents;
-  animation: result 1.2s infinite alternate;
+  animation: result2 1.2s infinite alternate;
 }
 
-@keyframes result{
+@keyframes result1{
+  from {
+    font-size: 2rem;
+  }
+  to {
+    font-size: 3.8rem;
+  }
+}
+
+@keyframes result2{
   from {
     font-size: 2rem;
     width: 30%;
