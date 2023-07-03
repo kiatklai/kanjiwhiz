@@ -89,27 +89,6 @@ nav{
 .visible-title{
   visibility: visible;
 }
-#ome{
-  border-bottom: 1px solid #ddd;
-}
-h2 .fa-regular{
-  font-family: 'Cherry Bomb One', cursive;
-  font-size: 3.4rem;
-  color: #f00f0f;
-  text-shadow: 2px 5px rgba(13, 250, 25, 0.5);
-  display: none;
-}
-#zannen{
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-#zannen h3 {
-  font-family: 'Cherry Bomb One', cursive;
-  font-size: 2.8rem;
-  color: #2314f0;
-  text-shadow: 2px 4px rgba(242, 250, 18, 0.5);
-  display: none;
-}
 /* footer */
 footer{
   width: 100vw;
