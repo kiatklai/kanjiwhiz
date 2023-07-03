@@ -48,11 +48,8 @@ https://kanjiwhiz.onrender.com/
 [![Image from Gyazo](https://i.gyazo.com/f34020019adcff19357d220237ff0b2d.gif)](https://gyazo.com/f34020019adcff19357d220237ff0b2d)
 ひらがな以外の文字（カタカナやローマ字など）を記入しても、「つぎへ」を押せないようにした。この場合、日本語で、エラーメッセージが掲示される。
 
-[![Image from Gyazo](https://i.gyazo.com/e1067f15abe7c8062569ed38ea074ee2.gif)](https://gyazo.com/e1067f15abe7c8062569ed38ea074ee2)
-5問すべて終了した後、合計得点と結果が画面に表示される。
-
 [![Image from Gyazo](https://i.gyazo.com/cc86b4615a82b94f15fd09913ad98dae.gif)](https://gyazo.com/cc86b4615a82b94f15fd09913ad98dae)
-合計得点が5になった場合、「おめでとう」の表示がされる。
+5問すべて終了した後、合計得点と結果が画面に表示され、合計得点が5になった場合、「おめでとう」の表示がされる。
 
 [![Image from Gyazo](https://i.gyazo.com/460e80f308792fc38b92f4c62bef2b4d.gif)](https://gyazo.com/460e80f308792fc38b92f4c62bef2b4d)
 合計得点が5以外の場合、「おしかった、もっとがんばってね」の表示がされる。
