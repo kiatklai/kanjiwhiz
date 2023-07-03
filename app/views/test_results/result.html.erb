@@ -3,8 +3,10 @@
 <div class="container-answer">
   <div class="answer">
     <h2>テスト結果</h2>
-    <p>合計得点: <%= @total_score %></p>
-
+    <p id="score">合計得点: <%= @total_score %></p>
+    
+    <div class="ome"><h2 class="ome-title" style="display:none;">おめでとう～🎆🎊</h2></div>
+    <div class="zannen"><h3 class="zannen-title" style="display:none;">おしかった！<br>もっとがんばってね～<i class="fa-regular fa-face-sad-cry"></i></h3></div>
     <h2>正解の問題一覧</h2>
     <div class="results">
       <ul>

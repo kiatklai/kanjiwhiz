@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../header")
+require("../result")
 import "bootstrap"
 import "../stylesheets/application"
 
